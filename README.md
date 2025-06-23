@@ -6,16 +6,19 @@ This project demonstrates how to provision AWS infrastructure using **Terraform*
 - A production-ready **EKS cluster**
 - A containerized application `simple-time-service` deployed to the cluster
 - A public-facing **LoadBalancer** service accessible via browser on port `5000`
+- Terraform remote state management with state locking to ensure consistency and avoid conflicts during concurrent operations
+
 
 ---
 
 ## 📌 Purpose
 
-This project is built to show end-to-end Infrastructure as Code (IaC) on AWS using Terraform and deploymnet of a containerized application. It will:
+This project is built to show end-to-end Infrastructure as Code (IaC) on AWS using Terraform and deployment of a containerized application. It will:
 
 - Provision secure, scalable infrastructure
 - Deploy Kubernetes workloads on EKS
 - Follow modular and reusable Terraform practices
+- Implement remote backend with state locking using services like S3 and DynamoDB to ensure infrastructure changes are safely coordinated across teams
 
 ---
 

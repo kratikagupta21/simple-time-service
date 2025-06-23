@@ -40,7 +40,7 @@ module "eks_cluster" {
 
 
 module "name" {
-  source = "../../modules/simple-time-service"
+  source = "../../modules/simple-time-service-deployment"
   deployment_name             = var.deployment_name
   deployment_namespace        = var.deployment_namespace
   deployment_label            = var.deployment_label

@@ -34,7 +34,35 @@ You must also ensure that your AWS credentials are configured using `aws configu
 
 ---
 
-<pre lang="markdown"><code> ## 📁 Folder Structure ``` . ├── app/ # App source code & Dockerfile │ ├── Dockerfile │ ├── requirements.txt │ └── simple_time_service.py ├── terraform/ # Terraform IaC files │ ├── environment/ │ │ └── prod/ │ │ ├── backend-prod.conf │ │ ├── backend.tf │ │ ├── data.tf │ │ ├── main.tf │ │ ├── output.tf │ │ ├── provider.tf │ │ ├── terraform.tfvars │ │ ├── variables.tf │ │ └── versions.tf │ ├── modules/ │ │ ├── eks/ │ │ ├── vpc/ │ │ └── simple-time-service-deployment/ │ └── tf-state-lock-infra/ ├── screenshots/ # Screenshots used in README └── README.md # ✅ Project documentation ``` </code></pre>
+## 📁 Folder Structure
+
+```
+app/                    # App source code & Dockerfile
+├── Dockerfile
+├── requirements.txt
+└── simple_time_service.py
+
+terraform/              # Terraform IaC files
+├── environment/
+│   └── prod/
+│       ├── backend-prod.conf
+│       ├── backend.tf
+│       ├── data.tf
+│       ├── main.tf
+│       ├── output.tf
+│       ├── provider.tf
+│       ├── terraform.tfvars
+│       ├── variables.tf
+│       └── versions.tf
+├── modules/
+│   ├── eks/
+│   ├── vpc/
+│   └── simple-time-service-deployment/
+└── tf-state-lock-infra/
+
+screenshots/           # Screenshots used in README
+README.md              # ✅ Project documentation
+```
 
 
 ## 🧱 Terraform Module Breakdown
@@ -90,14 +118,16 @@ After deployment completes, you will get an output called load_balancer_url
 
 Access the service in your browser:
 
+```bash
 http://<load_balancer_dns>:5000
+```
 
 ### 5️⃣ Deployment Output
 
 #### ✅ App Output
 ![App Output](screenshots/app-output.png)
 
-## ✅ Cleanup
+## 📌 Cleanup
 
 To destroy all AWS resources :
 

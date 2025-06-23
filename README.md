@@ -34,32 +34,7 @@ You must also ensure that your AWS credentials are configured using `aws configu
 
 ---
 
-## 📁 Folder Structure
-
-.
-├── app/ # App source code & Dockerfile
-│ └── Dockerfile
-│ └── requirements.txt
-│ └── simple_time_service.py
-├── terraform/ # Terraform IaC files
-│ └── environment/
-│ └── prod/
-│ └── backend-prod.conf
-│ └── backend.tf
-│ └── data.tf
-│ └── main.tf
-│ └── output.tf
-│ └── provider.tf
-│ └── terraform.tfvars
-│ └── variables.tf
-│ └── versions.tf
-│ └── modules/
-│ └── eks/
-│ └── vpc/
-│ └── simple-time-service-deployment/
-│ └── tf-state-lock-infra/
-├── screenshots/ # Screenshots used in README
-└── README.md # ✅ Project documentation
+<pre lang="markdown"><code> ## 📁 Folder Structure ``` . ├── app/ # App source code & Dockerfile │ ├── Dockerfile │ ├── requirements.txt │ └── simple_time_service.py ├── terraform/ # Terraform IaC files │ ├── environment/ │ │ └── prod/ │ │ ├── backend-prod.conf │ │ ├── backend.tf │ │ ├── data.tf │ │ ├── main.tf │ │ ├── output.tf │ │ ├── provider.tf │ │ ├── terraform.tfvars │ │ ├── variables.tf │ │ └── versions.tf │ ├── modules/ │ │ ├── eks/ │ │ ├── vpc/ │ │ └── simple-time-service-deployment/ │ └── tf-state-lock-infra/ ├── screenshots/ # Screenshots used in README └── README.md # ✅ Project documentation ``` </code></pre>
 
 
 ## 🧱 Terraform Module Breakdown
@@ -85,23 +60,29 @@ Deploys:
 ## 🚀 Step-by-Step Deployment
 
 ### 1️⃣ Clone the Repository
-
+ 
+```bash 
 git clone https://github.com/kratikagupta21/simple-time-service.git
-cd simple-time-service
+cd simple-time-service 
+```
 
 ### 2️⃣ Build & Push Docker Image
 
+```bash 
 cd app
 docker build -t simple-time-service:latest .
 docker push simple-time-service:latest
+```
 
 ### 3️⃣ Deploy with Terraform
 
+```bash 
 cd terraform
 cd environment/prod/
 terraform init -backend-config="backend-prod.conf"
 terraform plan
 terraform apply
+```
 
 ### 4️⃣ Access the Application 
 
@@ -116,9 +97,11 @@ http://<load_balancer_dns>:5000
 #### ✅ App Output
 ![App Output](screenshots/app-output.png)
 
-#### ✅ Cleanup
+## ✅ Cleanup
 
 To destroy all AWS resources :
 
+```bash 
 cd terraform/environment/prod/
 terraform destroy
+```

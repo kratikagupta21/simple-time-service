@@ -11,7 +11,7 @@ This project demonstrates how to provision AWS infrastructure using **Terraform*
 
 ## 📌 Purpose
 
-This project is built to show end-to-end Infrastructure as Code (IaC) on AWS using Terraform. It will:
+This project is built to show end-to-end Infrastructure as Code (IaC) on AWS using Terraform and deploymnet of a containerized application. It will:
 
 - Provision secure, scalable infrastructure
 - Deploy Kubernetes workloads on EKS

@@ -43,23 +43,23 @@ You must also ensure that your AWS credentials are configured using `aws configu
 │ └── simple_time_service.py
 ├── terraform/ # Terraform IaC files
 │ └── environment/
-│   └── prod/
-│     └── backend-prod.conf
-│     └── backend.tf
-│     └── data.tf
-│     └── main.tf
-│     └── output.tf
-│     └── provider.tf
-│     └── terraform.tfvars
-│     └── variables.tf
-│     └── versions.tf
+│ └── prod/
+│ └── backend-prod.conf
+│ └── backend.tf
+│ └── data.tf
+│ └── main.tf
+│ └── output.tf
+│ └── provider.tf
+│ └── terraform.tfvars
+│ └── variables.tf
+│ └── versions.tf
 │ └── modules/
-│   └── eks/
-│   └── vpc/
-│   └── simple-time-service-deployment/
+│ └── eks/
+│ └── vpc/
+│ └── simple-time-service-deployment/
 │ └── tf-state-lock-infra/
+├── screenshots/ # Screenshots used in README
 └── README.md # ✅ Project documentation
-└── screenshots/
 
 
 ## 🧱 Terraform Module Breakdown
@@ -86,7 +86,6 @@ Deploys:
 
 ### 1️⃣ Clone the Repository
 
-```bash
 git clone https://github.com/kratikagupta21/simple-time-service.git
 cd simple-time-service
 
@@ -105,6 +104,7 @@ terraform plan
 terraform apply
 
 ### 4️⃣ Access the Application 
+
 After deployment completes, you will get an output called load_balancer_url
 
 Access the service in your browser:
@@ -116,7 +116,8 @@ http://<load_balancer_dns>:5000
 #### ✅ App Output
 ![App Output](screenshots/app-output.png)
 
-🧹 Cleanup
+#### ✅ Cleanup
+
 To destroy all AWS resources :
 
 cd terraform/environment/prod/
